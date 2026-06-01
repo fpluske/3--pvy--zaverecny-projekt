@@ -11,8 +11,7 @@ Spuštění:
 2. Nainstalujte závislosti z requirements.txt.
 3. Proveďte migrace příkazem python manage.py migrate.
 4. Naimportujte ukázková data příkazem python manage.py loaddata store/fixtures/initial_data.json.
-5. Vytvořte superuživatele příkazem python manage.py create_demo_superuser.
-6. Spusťte server příkazem python manage.py runserver.
+5. Spusťte server příkazem python manage.py runserver.
 
 Administrace:
 - /admin/
