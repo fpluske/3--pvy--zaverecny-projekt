@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ product.name }} | ElektroTrh{% endblock %}
+
+{% block content %}
+<section class="detail-layout">
+    <article class="panel detail-main">
+        <p class="eyebrow">{{ product.category.name }}</p>
+        <h1>{{ product.name }}</h1>
+        <p class="lead">{{ product.short_description }}</p>
+        <div class="detail-meta">
+            <span>Výrobce: <strong>{{ product.manufacturer.name }}</strong></span>
+            <span>Cena: <strong>{{ product.price }} Kč</strong></span>
+            <span>Skladem: <strong>{{ product.stock }}</strong></span>
+        </div>
+        <p>{{ product.description }}</p>
+    </article>
+
+    <aside class="panel">
+        <h2>Související produkty</h2>
+        <div class="stack-list">
+            {% for item in related_products %}
+                <div class="stack-item compact">
+                    <div>
+                        <h3><a href="{{ item.get_absolute_url }}">{{ item.name }}</a></h3>
+                        <p>{{ item.manufacturer.name }}</p>
+                    </div>
+                    <strong>{{ item.price }} Kč</strong>
+                </div>
+            {% empty %}
+                <p>V této kategorii nejsou další produkty.</p>
+            {% endfor %}
+        </div>
+    </aside>
+</section>
+{% endblock %}

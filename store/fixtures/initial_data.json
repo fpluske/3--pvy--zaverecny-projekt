@@ -1,0 +1,136 @@
+[
+  {
+    "model": "store.category",
+    "pk": 1,
+    "fields": {
+      "name": "Notebooky",
+      "slug": "notebooky",
+      "description": "Výkonné notebooky pro studium, práci i hraní."
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 2,
+    "fields": {
+      "name": "Mobily",
+      "slug": "mobily",
+      "description": "Chytré telefony s vysokým výkonem a kvalitním fotoaparátem."
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 3,
+    "fields": {
+      "name": "Chytrá domácnost",
+      "slug": "chytra-domacnost",
+      "description": "Zařízení pro automatizaci a pohodlné ovládání domácnosti."
+    }
+  },
+  {
+    "model": "store.manufacturer",
+    "pk": 1,
+    "fields": {
+      "name": "Aurex",
+      "slug": "aurex",
+      "country": "Česko"
+    }
+  },
+  {
+    "model": "store.manufacturer",
+    "pk": 2,
+    "fields": {
+      "name": "Nordbyte",
+      "slug": "nordbyte",
+      "country": "Německo"
+    }
+  },
+  {
+    "model": "store.manufacturer",
+    "pk": 3,
+    "fields": {
+      "name": "LumaTech",
+      "slug": "lumatech",
+      "country": "Japonsko"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 1,
+    "fields": {
+      "name": "Aurex ProBook 14",
+      "slug": "aurex-probook-14",
+      "category": 1,
+      "manufacturer": 1,
+      "short_description": "Lehký pracovní notebook s dlouhou výdrží baterie.",
+      "description": "Notebook vhodný pro studium i kancelářskou práci. Nabízí rychlé SSD, 16 GB RAM a kvalitní displej.",
+      "price": "24990.00",
+      "stock": 8,
+      "featured": true,
+      "image_url": ""
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 2,
+    "fields": {
+      "name": "Nordbyte GameX 16",
+      "slug": "nordbyte-gamex-16",
+      "category": 1,
+      "manufacturer": 2,
+      "short_description": "Výkonný notebook pro hraní a náročné aplikace.",
+      "description": "Model s dedikovanou grafikou, vysokofrekvenčním displejem a robustním chlazením.",
+      "price": "38990.00",
+      "stock": 4,
+      "featured": true,
+      "image_url": ""
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 3,
+    "fields": {
+      "name": "LumaTech S9",
+      "slug": "lumattech-s9",
+      "category": 2,
+      "manufacturer": 3,
+      "short_description": "Stylový smartphone s kvalitním fotoaparátem.",
+      "description": "Telefon s OLED displejem, rychlým nabíjením a pokročilou sadou fotoaparátů.",
+      "price": "17990.00",
+      "stock": 12,
+      "featured": true,
+      "image_url": ""
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 4,
+    "fields": {
+      "name": "Aurex Smart Lamp",
+      "slug": "aurex-smart-lamp",
+      "category": 3,
+      "manufacturer": 1,
+      "short_description": "Chytrá lampička s ovládáním přes mobil.",
+      "description": "Úsporné světlo s možností změny teploty barvy a integrací do chytré domácnosti.",
+      "price": "1490.00",
+      "stock": 25,
+      "featured": false,
+      "image_url": ""
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 5,
+    "fields": {
+      "name": "Nordbyte Home Hub",
+      "slug": "nordbyte-home-hub",
+      "category": 3,
+      "manufacturer": 2,
+      "short_description": "Centrální jednotka pro chytrou domácnost.",
+      "description": "Hub propojí senzory, světla i zásuvky do jedné přehledné aplikace.",
+      "price": "3290.00",
+      "stock": 10,
+      "featured": false,
+      "image_url": ""
+    }
+  }
+]
