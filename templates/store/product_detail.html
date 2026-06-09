@@ -5,6 +5,13 @@
 {% block content %}
 <section class="detail-layout">
     <article class="panel detail-main">
+        <div class="product-media product-media--detail">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" loading="eager">
+            {% else %}
+                <div class="product-fallback">{{ product.name }}</div>
+            {% endif %}
+        </div>
         <p class="eyebrow">{{ product.category.name }}</p>
         <h1>{{ product.name }}</h1>
         <p class="lead">{{ product.short_description }}</p>
@@ -21,6 +28,13 @@
         <div class="stack-list">
             {% for item in related_products %}
                 <div class="stack-item compact">
+                    <div class="product-media product-media--thumb">
+                        {% if item.image %}
+                            <img src="{{ item.image.url }}" alt="{{ item.name }}" loading="lazy">
+                        {% else %}
+                            <div class="product-fallback">{{ item.name }}</div>
+                        {% endif %}
+                    </div>
                     <div>
                         <h3><a href="{{ item.get_absolute_url }}">{{ item.name }}</a></h3>
                         <p>{{ item.manufacturer.name }}</p>

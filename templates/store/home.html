@@ -16,6 +16,13 @@
         <div class="card-list">
             {% for product in featured_products %}
                 <a class="card" href="{{ product.get_absolute_url }}">
+                    <div class="product-media product-media--card">
+                        {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
+                        {% else %}
+                            <div class="product-fallback">{{ product.name }}</div>
+                        {% endif %}
+                    </div>
                     <span class="card-category">{{ product.category.name }}</span>
                     <h3>{{ product.name }}</h3>
                     <p>{{ product.short_description }}</p>
@@ -32,6 +39,13 @@
         <div class="stack-list">
             {% for product in latest_products %}
                 <div class="stack-item">
+                    <div class="product-media product-media--thumb">
+                        {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
+                        {% else %}
+                            <div class="product-fallback">{{ product.name }}</div>
+                        {% endif %}
+                    </div>
                     <div>
                         <h3><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h3>
                         <p>{{ product.category.name }} · {{ product.manufacturer.name }}</p>
