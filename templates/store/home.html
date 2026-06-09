@@ -23,7 +23,7 @@
                             <div class="product-fallback">{{ product.name }}</div>
                         {% endif %}
                     </div>
-                    <span class="card-category">{{ product.category.name }}</span>
+                    <a class="card-category" href="{% url 'category_detail' product.category.slug %}">{{ product.category.name }}</a>
                     <h3>{{ product.name }}</h3>
                     <p>{{ product.short_description }}</p>
                     <strong>{{ product.price }} Kč</strong>
@@ -48,7 +48,7 @@
                     </div>
                     <div>
                         <h3><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h3>
-                        <p>{{ product.category.name }} · {{ product.manufacturer.name }}</p>
+                        <p><a href="{% url 'category_detail' product.category.slug %}">{{ product.category.name }}</a> · {{ product.manufacturer.name }}</p>
                     </div>
                     <strong>{{ product.price }} Kč</strong>
                 </div>

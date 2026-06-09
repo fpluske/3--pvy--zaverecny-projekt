@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 
-from .models import Product
+from .models import Product, Category
 
 
 def home(request):
@@ -36,4 +36,10 @@ def product_detail(request, slug):
             'related_products': related_products,
         },
     )
+
+
+def category_detail(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+    products = Product.objects.select_related('manufacturer').filter(category=category)
+    return render(request, 'store/category.html', {'category': category, 'products': products})
 

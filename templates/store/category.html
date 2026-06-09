@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
 
-{% block title %}ElektroTrh | Produkty{% endblock %}
+{% block title %}Kategorie: {{ category.name }} | ElektroTrh{% endblock %}
 
 {% block content %}
 <section class="page-header">
     <div>
-        <p class="eyebrow">Katalog</p>
-        <h1>Všechny produkty</h1>
+        <p class="eyebrow">Kategorie</p>
+        <h1>{{ category.name }}</h1>
+        {% if category.description %}
+            <p class="lead">{{ category.description }}</p>
+        {% endif %}
     </div>
 </section>
 
@@ -29,7 +32,7 @@
             </div>
         </article>
     {% empty %}
-        <p>Zatím nejsou v databázi žádné produkty.</p>
+        <p>V této kategorii zatím nejsou žádné produkty.</p>
     {% endfor %}
 </section>
 {% endblock %}

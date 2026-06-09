@@ -12,7 +12,7 @@
                 <div class="product-fallback">{{ product.name }}</div>
             {% endif %}
         </div>
-        <p class="eyebrow">{{ product.category.name }}</p>
+        <p class="eyebrow"><a href="{% url 'category_detail' product.category.slug %}">{{ product.category.name }}</a></p>
         <h1>{{ product.name }}</h1>
         <p class="lead">{{ product.short_description }}</p>
         <div class="detail-meta">
